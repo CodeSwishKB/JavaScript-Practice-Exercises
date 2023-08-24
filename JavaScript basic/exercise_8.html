@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 8 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      Write a JavaScript program where the program takes a random integer
+      between 1 and 10, and the user is then prompted to input a guess number.
+      The program displays a message "Good Work" if the input matches the guess
+      number otherwise "Not matched".
+    </h2>
+
+    <input type="number" placeholder="guess the number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elBtn = document.querySelector("button");
+      var elTxt = document.querySelector("p");
+
+      elBtn.addEventListener("click", function (e) {
+        var randomNum = Math.ceil(Math.random() * 10);
+        var elInput = document.querySelector("input");
+        var elGuess = elInput.value.trim();
+
+        if (elGuess === "") {
+          elTxt.textContent = `enter a number`;
+        } else if (randomNum === parseInt(elGuess)) {
+          elInput.value = "";
+          elTxt.textContent = `${elGuess} is right, Good Work! The number is: ${randomNum} `;
+        } else {
+          elInput.value = "";
+          elTxt.textContent = `${elGuess} is Not matched! The number is: ${randomNum} `;
+        }
+      });
+    </script>
+  </body>
+</html>

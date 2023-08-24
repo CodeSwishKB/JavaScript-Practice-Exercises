@@ -19,7 +19,55 @@
 
     <p id="fourth"></p>
     <button id="fourth-format">fourth format</button>
+
     <script>
+      // DRY PRINCIPLE
+      /* // Get all the buttons and the current date
+      var btn1 = document.getElementById("first-format");
+      var btn2 = document.getElementById("second-format");
+      var btn3 = document.getElementById("third-format");
+      var btn4 = document.getElementById("fourth-format");
+      var today = new Date();
+
+      // Function to format the date
+      function formatDate(formatString) {
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1;
+        let dd = today.getDate();
+
+        if (dd < 10) dd = `0${dd}`;
+        if (mm < 10) mm = `0${mm}`;
+
+        return formatString
+          .replace("yyyy", yyyy)
+          .replace("mm", mm)
+          .replace("dd", dd);
+      }
+
+      // Function to update the element with the formatted date
+      function updateElement(elementId, formatString) {
+        const formattedDate = formatDate(formatString);
+        var element = document.getElementById(elementId);
+        element.textContent = formattedDate;
+      }
+
+      // Add event listeners to buttons
+      btn1.addEventListener("click", function () {
+        updateElement("first", "mm-dd-yyyy");
+      });
+
+      btn2.addEventListener("click", function () {
+        updateElement("second", "mm/dd/yyyy");
+      });
+
+      btn3.addEventListener("click", function () {
+        updateElement("third", "dd-mm-yyyy");
+      });
+
+      btn4.addEventListener("click", function () {
+        updateElement("fourth", "dd/mm/yyyy");
+      });*/
+
       var btn1 = document.getElementById("first-format");
       var btn2 = document.getElementById("second-format");
       var btn3 = document.getElementById("third-format");

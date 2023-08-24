@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 4 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      4. Write a JavaScript program to find the area of a triangle where three
+      sides are 5, 6, 7.
+    </h2>
+    <p></p>
+    <button>find</button>
+
+    <script>
+      var btn = document.querySelector("button");
+      var resultTxt = document.querySelector("p");
+      btn.addEventListener("click", function () {
+        var a = 5;
+        var b = 6;
+        var c = 7;
+
+        const sides = (a + b + c) / 2;
+
+        // area
+        const area = Math.sqrt(sides * (sides - a) * (sides - b) * (sides - c));
+
+        resultTxt.textContent = `The area of Triangle in this exercise is ${area.toFixed(
+          2
+        )}`;
+      });
+    </script>
+  </body>
+</html>
