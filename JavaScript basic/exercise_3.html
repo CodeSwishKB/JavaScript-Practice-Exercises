@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 3 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>3. Write a JavaScript program to get the current date.</h2>
+    <h3>Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</h3>
+    <p id="first"></p>
+    <button id="first-format">first format</button>
+
+    <p id="second"></p>
+    <button id="second-format">second format</button>
+
+    <p id="third"></p>
+    <button id="third-format">third format</button>
+
+    <p id="fourth"></p>
+    <button id="fourth-format">fourth format</button>
+    <script>
+      var btn1 = document.getElementById("first-format");
+      var btn2 = document.getElementById("second-format");
+      var btn3 = document.getElementById("third-format");
+      var btn4 = document.getElementById("fourth-format");
+
+      var today = new Date();
+      let yyyy = today.getFullYear();
+      let mm = today.getMonth() + 1;
+      let dd = today.getDate();
+
+      if (dd < 10) dd = `0${dd}`;
+      if (mm < 10) mm = `0${mm}`;
+
+      function firstFormat() {
+        var format = `${mm}-${dd}-${yyyy}`;
+        var first = document.getElementById("first");
+        first.textContent = format;
+      }
+      btn1.addEventListener("click", firstFormat);
+
+      function secondFormat() {
+        var format = `${mm}/${dd}/${yyyy}`;
+        var first = document.getElementById("second");
+        first.textContent = format;
+      }
+      btn2.addEventListener("click", secondFormat);
+
+      function thirdFormat() {
+        var format = `${dd}-${mm}-${yyyy}`;
+        var first = document.getElementById("third");
+        first.textContent = format;
+      }
+      btn3.addEventListener("click", thirdFormat);
+
+      function fourthFormat() {
+        var format = `${dd}/${mm}/${yyyy}`;
+        var first = document.getElementById("fourth");
+        first.textContent = format;
+      }
+      btn4.addEventListener("click", fourthFormat);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 1 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      1. Write a JavaScript program to display the current day and time in the
+      following format.
+    </h2>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <button>display time and date</button>
+
+    <script>
+      var days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      var btn = document.querySelector("button");
+
+      var today = new Date();
+      var day = days[today.getDay()];
+
+      var time = new Date();
+      var hours = time.getHours();
+      var min = time.getMinutes();
+      var sec = time.getSeconds();
+      if (sec < 10) sec = `0${sec}`;
+      var ampm = hours >= 12 ? "PM" : "AM";
+
+      btn.addEventListener("click", function () {
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+
+        p1.textContent = `Today is: ${day}`;
+        p2.textContent = `Current Time is: ${hours} ${ampm} : ${min} : ${sec}`;
+      });
+    </script>
+  </body>
+</html>
