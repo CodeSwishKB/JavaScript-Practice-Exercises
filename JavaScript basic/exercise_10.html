@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 10 - JavaScript Basics</title>
+    <style>
+      .container {
+        height: 150px;
+        width: 280px;
+        border: 1px solid gray;
+        padding: 10px;
+      }
+      .control1,
+      .control2,
+      .btns {
+        padding: 5px;
+      }
+      .btns > #multiply {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Write a JavaScript program to calculate multiplication and division of two
+      numbers (input from the user).
+    </h2>
+
+    <section class="container">
+      <div class="control1">1st Number: <input id="num1" type="number" /></div>
+      <div class="control2">2nd Number: <input id="num2" type="number" /></div>
+      <div class="btns">
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+      </div>
+      <p></p>
+
+      <script>
+        // DRY
+        var elMultiplyBtn = document.getElementById("multiply");
+        var elDivideBtn = document.getElementById("divide");
+        var elResult = document.querySelector("p");
+        var elNum1 = document.getElementById("num1");
+        var elNum2 = document.getElementById("num2");
+
+        elMultiplyBtn.addEventListener("click", function () {
+          calculate("multiply");
+        });
+        elDivideBtn.addEventListener("click", function () {
+          calculate("divide");
+        });
+
+        function calculate(operation) {
+          var num1Val = parseFloat(elNum1.value);
+          var num2Val = parseFloat(elNum2.value);
+
+          if (isNaN(num1Val) || isNaN(num2Val)) {
+            elResult.textContent = `Please Enter a number`;
+          } else {
+            var result;
+            if (operation === "multiply") {
+              result = num1Val * num2Val;
+            } else if (operation === "divide") {
+              if (num2Val === 0) {
+                elResult.innerHTML = `You cannot divide by 0`;
+                return;
+              }
+              result = num1Val / num2Val;
+            }
+            elResult.innerHTML = `The Result is:<br>${result}`;
+          }
+          elNum1.value = "";
+          elNum2.value = "";
+        }
+
+        // function multiply() {
+        //   var elNum1 = document.getElementById("num1");
+        //   var num1Val = elNum1.value;
+        //   var elNum2 = document.getElementById("num2");
+        //   var num2Val = elNum2.value;
+        //   elResult.innerHTML = `The Result is:<br> ${
+        //     parseInt(num1Val) * parseInt(num2Val)
+        //   }`;
+        //   elNum1.value = "";
+        //   elNum2.value = "";
+        // }
+
+        // function divide() {
+        //   var elNum1 = document.getElementById("num1");
+        //   var num1Val = elNum1.value;
+        //   var elNum2 = document.getElementById("num2");
+        //   var num2Val = elNum2.value;
+        //   elResult.innerHTML = `The Result is:<br> ${
+        //     parseInt(num1Val) / parseInt(num2Val)
+        //   }`;
+        //   elNum1.value = "";
+        //   elNum2.value = "";
+        // }
+      </script>
+    </section>
+  </body>
+</html>

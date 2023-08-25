@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 9 - JavaScript Basics</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>
+      Write a JavaScript program to calculate the days left before Christmas.
+    </h2>
+    <p></p>
+    <button>calculate</button>
+    <script>
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var today = new Date();
+        var christmasYear = today.getFullYear();
+        if (today.getMonth == 11 && today.getDate() > 25) {
+          christmasYear = christmasYear + 1;
+        }
+
+        var christmasDate = new Date(christmasYear, 11, 25);
+        var dayMilliSec = 1000 * 60 * 60 * 24;
+        var daysLeft = Math.ceil(
+          (christmasDate.getTime() - today.getTime()) / dayMilliSec
+        );
+
+        elDisplay.innerHTML = `There are <span id="dayColors">${daysLeft}</span> until Christmas Day ${christmasYear}`;
+        blink("dayColors");
+      });
+
+      function blink(id) {
+        var dayColor = document.getElementById(id);
+        if (dayColor) {
+          dayColor.style.color =
+            dayColor.style.color === "red"
+              ? "blue"
+              : dayColor.style.color === "blue"
+              ? "yellow"
+              : dayColor.style.color === "yellow"
+              ? "green"
+              : "red";
+          setTimeout(function () {
+            blink(id);
+          }, 400);
+        }
+      }
+    </script>
+  </body>
+</html>
