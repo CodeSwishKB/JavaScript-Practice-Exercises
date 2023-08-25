@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 19 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      19. Write a JavaScript program to check whether a given integer is within
+      20 of 100 or 400.
+    </h2>
+
+    <input type="number" placeholder="enter a number" />
+    <button>check</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val = elInput.value;
+        var result =
+          Math.abs(100 - parseFloat(val) <= 20) ||
+          Math.abs(400 - parseFloat(val) <= 20);
+
+        elDisplay.innerHTML = `You pick ${val} - ${!!result}`;
+        elInput.value = "";
+      });
+    </script>
+  </body>
+</html>

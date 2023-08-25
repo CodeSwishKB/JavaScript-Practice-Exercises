@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 18 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      18. Write a JavaScript program to check a pair of numbers and return true
+      if one of the numbers is 50 or if their sum is 50.
+    </h2>
+    <input id="num1" type="number" placeholder="1st number" />
+    <input id="num2" type="number" placeholder="2nd number" />
+    <button>check</button>
+    <p></p>
+    <script>
+      var elInput1 = document.getElementById("num1");
+      var elInput2 = document.getElementById("num2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val1 = elInput1.value;
+        var val2 = elInput2.value;
+        var result = parseFloat(val1) + parseFloat(val2);
+        if (
+          parseFloat(val1) === 50 ||
+          parseFloat(val2) === 50 ||
+          result === 50
+        ) {
+          //   result = parseFloat(val1) + parseFloat(val2);
+          elDisplay.innerHTML = `${result} - ${true}`;
+          elInput1.value = "";
+          elInput2.value = "";
+        } else {
+          elDisplay.innerHTML = `${result} - ${false}`;
+          elInput1.value = "";
+          elInput2.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
