@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 11 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      Write a JavaScript program to convert temperatures to and from Celsius,
+      Fahrenheit
+    </h2>
+    <input type="number" placeholder="enter a temp" />
+    <button id="celsius">Find Celsius</button>
+    <button id="fahrenheit">Find Fahrenheit</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elCelBtn = document.getElementById("celsius");
+      var elFahBtn = document.getElementById("fahrenheit");
+      var elResult = document.querySelector("p");
+
+      elCelBtn.addEventListener("click", function () {
+        convert("celsius");
+      });
+
+      elFahBtn.addEventListener("click", function () {
+        convert("fahrenheit");
+      });
+
+      function convert(unit) {
+        var valEnter = elInput.value;
+        if (isNaN(parseFloat(valEnter))) {
+          elResult.innerText = `Please enter a number`;
+        } else {
+          var result;
+          if (unit === "celsius") {
+            result = (valEnter - 32) / 1.8;;
+            elResult.innerHTML = `${valEnter}°F is ${Math.round(
+              result
+            ).toFixed(1)}°C`;
+          } else if (unit === "fahrenheit") {
+            result = (valEnter * 1.8) + 32;
+            elResult.innerHTML = `${valEnter}°C is ${Math.round(
+              result
+            ).toFixed(1)}°F`;
+          }
+        }
+        elInput.value = "";
+      }
+    </script>
+  </body>
+</html>

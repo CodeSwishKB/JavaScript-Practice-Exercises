@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 13 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      13. Write a JavaScript exercise to create a variable using a user-defined
+      name.
+    </h2>
+    <p></p>
+    <button id="objBtn">create variable using object</button>
+    <button id="thisBtn">create variable using "this" keyword</button>
+
+    <script>
+      var elBtnObj = document.getElementById("objBtn");
+      var elBtnThis = document.getElementById("thisBtn");
+      var elDisplay = document.querySelector("p");
+
+      elBtnObj.addEventListener("click", function () {
+        user("object");
+      });
+      elBtnThis.addEventListener("click", function () {
+        user("this");
+      });
+
+      function user(type) {
+        //using obj
+        let my_var = "kyle";
+        let my_value = "SWE";
+        let x = {
+          [my_var]: my_value,
+        };
+
+        // using "this" keyword
+        let my_lastName = "barco";
+        let my_age = 20;
+        this[my_lastName] = my_age;
+
+        if (type === "object") {
+          elDisplay.innerHTML = `${x[my_var]}`;
+        } else if (type === "this") {
+          elDisplay.innerHTML = `${this[my_lastName]}`;
+        }
+      }
+    </script>
+  </body>
+</html>

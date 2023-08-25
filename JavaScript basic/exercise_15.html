@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 15 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      15. Write a JavaScript program to get the difference between a given
+      number and 13, if the number is broader than 13 return double the absolute
+      difference.
+    </h2>
+
+    <input type="number" placeholder="enter a number" />
+    <button>get</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+      elBtn.addEventListener("click", function () {
+        var val = elInput.value;
+        if (val <= 13) {
+          elDisplay.innerHTML = `${13 - val}`;
+        } else {
+          elDisplay.innerHTML = `${(val - 13) * 2}`;
+        }
+      });
+    </script>
+  </body>
+</html>

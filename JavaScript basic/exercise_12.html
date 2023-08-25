@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 12 - JavaScript Basics</title>
+</head>
+<body>
+    <h2> Write a JavaScript program to get the website URL (loading page)</h2>
+    <p></p>
+    <button>get URL</button>
+
+    <script>
+        var elDisplay = document.querySelector('p')
+        var elBtn = document.querySelector('button')
+
+        elBtn.addEventListener('click', function(){
+            var baseURl = `https://nba.smart.com.ph/?gr=www`
+            var url = new URL(baseURl)
+            var link = url.href
+            elDisplay.innerHTML = `The URL link is ${link}`
+        })
+    </script>
+</body>
+</html>

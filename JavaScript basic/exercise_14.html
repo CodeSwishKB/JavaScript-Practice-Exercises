@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 14 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>14. Write a JavaScript exercise to get the filename extension.</h2>
+    <input type="text" placeholder="enter filename" />
+    <button>get filename extension</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var filename = elInput.value;
+        elDisplay.innerHTML = `${filename.split(".").pop()}`;
+        elInput.value = "";
+      });
+    </script>
+  </body>
+</html>
