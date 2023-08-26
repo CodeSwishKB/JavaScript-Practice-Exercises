@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 23 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      23. Write a JavaScript program to create a new string from a given string
+      by changing the position of the first and last characters. The string
+      length must be broader than or equal to 1.
+    </h2>
+
+    <input type="text" />
+    <button>change position</button>
+    <p></p>
+    <script>
+      // w3 solution
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var inputVal = elInput.value;
+        if (inputVal <= 1) {
+          elDisplay.innerHTML = inputVal;
+        }
+        var mid_char = inputVal.substring(1, inputVal.length - 1);
+        elDisplay.innerHTML =
+          inputVal.charAt(inputVal.length - 1) + mid_char + inputVal.charAt(0);
+      });
+
+      //my solution
+      //   var elInput = document.querySelector("input");
+      //   var elBtn = document.querySelector("button");
+      //   var elDisplay = document.querySelector("p");
+
+      //   elBtn.addEventListener("click", function () {
+      //     var inputVal = elInput.value;
+
+      //     if (inputVal.length >= 1) {
+      //       var fChar = inputVal.substring(0, 1); // get the first character in the string
+      //       var lChar = inputVal.substring(inputVal.length - 1, inputVal.length); // get the last character in the string
+      //       var leftChar = inputVal.substring(1, inputVal.length - 1); // get the left characters in the string
+      //       elDisplay.innerHTML = `${lChar}${leftChar}${fChar}`;
+      //     }
+      //   });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 26 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      26. Write a JavaScript program to create a string from a given string.
+      This is done by taking the last 3 characters and adding them at both the
+      front and back. The string length must be 3 or more.
+    </h2>
+
+    <input type="text" name="" id="" />
+    <button>add</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val = elInput.value;
+        var last3Char = val.substring(val.length - 3);
+        if (val.length >= 3) {
+          var len = 3;
+          elDisplay.innerHTML = len;
+          elDisplay.innerHTML = `${last3Char}${val}${last3Char}`;
+        } else {
+          elDisplay.innerHTML = `Must 3 or more characters`;
+        }
+      });
+    </script>
+  </body>
+</html>
