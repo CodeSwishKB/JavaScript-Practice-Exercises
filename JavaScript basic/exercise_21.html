@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 21 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      21. Write a JavaScript program to create another string by adding "Py" in
+      front of a given string. If the given string begins with "Py" return the
+      original string.
+    </h2>
+
+    <input type="text" />
+    <button>add</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var inptVal = elInput.value;
+
+        if (
+          inptVal === null ||
+          inptVal === undefined ||
+          inptVal.substring(0, 2) == "Py"
+        ) {
+          elDisplay.innerHTML = inptVal;
+        }
+        elDisplay.innerHTML = `Py${inptVal}`;
+      });
+    </script>
+  </body>
+</html>

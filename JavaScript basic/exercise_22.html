@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 22 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      22. Write a JavaScript program to remove a character at the specified
+      position in a given string and return the modified string.
+    </h2>
+    <input type="text" placeholder="enter text" />
+    <button>add</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val = elInput.value;
+        elDisplay.innerHTML = remove_char(val, 0);
+      });
+
+      function remove_char(str, char_pos) {
+        part1 = str.substring(0, char_pos);
+        part2 = str.substring(char_pos + 1, str.length);
+        return (elDisplay = part1 + part2);
+      }
+    </script>
+  </body>
+</html>
