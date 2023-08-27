@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 29 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      29. Write a JavaScript program to check whether three given integer values
+      are in the range 50..99 (inclusive). Return true if one or more of them
+      are in the specified range.
+    </h2>
+
+    <input id="inputVal1" type="number" placeholder="1st integer" />
+    <input id="inputVal2" type="number" placeholder="2nd integer" />
+    <input id="inputVal3" type="number" placeholder="3rd integer" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elInput1 = document.getElementById("inputVal1");
+      var elInput2 = document.getElementById("inputVal2");
+      var elInput3 = document.getElementById("inputVal3");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val1 = parseInt(elInput1.value);
+        var val2 = parseInt(elInput2.value);
+        var val3 = parseInt(elInput3.value);
+
+        var val1_range = val1 >= 50 && val1 <= 99;
+        var val2_range = val2 >= 50 && val2 <= 99;
+        var val3_range = val3 >= 50 && val3 <= 99;
+
+        if (val1_range && val2_range && val3_range) {
+          elDisplay.innerHTML = `The three integers ${val1}, ${val2} and ${val3} is in the range of 50 to 99`;
+        } else if (val1_range) {
+          elDisplay.innerHTML = `${val1} IS IN THE RANGE of 50 to 99 but BOTH ${val2} and ${val3} IS NOT IN THE RANGE of 50 to 99`;
+        } else if (val2_range) {
+          elDisplay.innerHTML = `${val2} IS IN THE RANGE of 50 to 99 but BOTH ${val1} and ${val3} IS NOT IN THE RANGE of 50 to 99`;
+        } else if (val3_range) {
+          elDisplay.innerHTML = `${val3} IS IN THE RANGE of 50 to 99 but BOTH ${val1} and ${val2} IS NOT IN THE RANGE of 50 to 99`;
+        } else {
+          elDisplay.innerHTML = `${val1}, ${val2} and ${val3} IS NOT IN THE RANGE of 50 to 99`;
+        }
+      });
+    </script>
+  </body>
+</html>

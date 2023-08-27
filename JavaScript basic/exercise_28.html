@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 28 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      28. Write a JavaScript program to check whether two given integer values
+      are in the range 50..99 (inclusive). Return true if either of them falls
+      within the range.
+    </h2>
+
+    <input id="inputVal1" type="number" placeholder="1st integer" />
+    <input id="inputVal2" type="number" placeholder="2nd integer" />
+    <button>check</button>
+    <p></p>
+    <script>
+      var elInput1 = document.getElementById("inputVal1");
+      var elInput2 = document.getElementById("inputVal2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var val1 = parseInt(elInput1.value);
+        var val2 = parseInt(elInput2.value);
+
+        var val1_range = val1 >= 50 && val1 <= 99;
+        var val2_range = val2 >= 50 && val2 <= 99;
+
+        if (val1_range && val2_range) {
+          elDisplay.innerHTML = `Both ${val1} and ${val2} IS IN THE range of 50 to 99`;
+        } else if (val1_range) {
+          elDisplay.innerHTML = `${val1} IS IN THE range of 50 to 99 BUT ${val2} IS NOT IN THE range of 50 to 99`;
+        } else if (val2_range) {
+          elDisplay.innerHTML = `${val2} IS IN THE range of 50 to 99 BUT ${val1} IS NOT IN THE range of 50 to 99`;
+        } else {
+          elDisplay.innerHTML = `Both ${val1} and ${val2} IS NOT IN THE range of 50 to 99`;
+        }
+      });
+    </script>
+  </body>
+</html>
