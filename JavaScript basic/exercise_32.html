@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 32 - JavaScript Basics</title>
+</head>
+<body>
+    <h2>32. Write a JavaScript program to find the closest value to 100 from two numerical values.  </h2>
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <button>find</button>
+    <p></p>
+
+    <script>
+        var elInput1 = document.getElementById('num1')
+        var elInput2 = document.getElementById('num2')
+        var elBtn = document.querySelector('button')
+        var elDisplay = document.querySelector('p')
+
+        elBtn.addEventListener('click', function(){
+            var val1 = parseInt(elInput1.value)
+            var val2 = parseInt(elInput2.value)
+
+            if(val1 != val2){
+                var x1 = Math.abs(val1 - 100)
+                var y1 = Math.abs(val2 - 100)
+
+                if (x1 < y1){
+                    elDisplay.innerHTML = `The closest number to 100 is ${val1}`
+                }
+
+                if (y1 < x1){
+                    elDisplay.innerHTML = `The closest number to 100 is ${val2}`
+                }
+                return 0
+            }else {
+                return false
+            }
+        })
+    </script>
+</body>
+</html>

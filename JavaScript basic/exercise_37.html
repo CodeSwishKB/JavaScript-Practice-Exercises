@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 37 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      37. Write a JavaScript program to produce a new string that has the first
+      3 characters in lower case from a given string. If the string length is
+      less than 3 convert all the characters to upper case.
+    </h2>
+
+    <input type="text" />
+    <button>convert</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+
+        if (str.length > 3) {
+          elDisplay.innerHTML =
+            str.substring(0, 3).toLowerCase() +
+            str.substring(3, str.length).toUpperCase();
+        } else {
+          elDisplay.innerHTML = str.toUpperCase();
+        }
+      });
+    </script>
+  </body>
+</html>

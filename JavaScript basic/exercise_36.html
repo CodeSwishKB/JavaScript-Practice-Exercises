@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 36 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      36. Write a JavaScript program that checks whether the last digit of three
+      positive integers is the same.
+    </h2>
+
+    <input type="number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num = parseInt(elInput.value);
+
+        var last3Num = num % 1000;
+        var a = last3Num.toString().substring(0, 1);
+        var b = last3Num.toString().substring(1, 2);
+        var c = last3Num.toString().substring(2, 3);
+
+        if (a === b && a === c) {
+          elDisplay.innerHTML = `The last 3 digits <span style="color: green">(${a}, ${b}, ${c})</span> are <span style="color: green">the same</span>`;
+        } else {
+          elDisplay.innerHTML = `The last 3 digits <span style="color: red">(${a}, ${b}, ${c})</span> are <span style="color:red">not</span> the same`;
+        }
+      });
+    </script>
+  </body>
+</html>

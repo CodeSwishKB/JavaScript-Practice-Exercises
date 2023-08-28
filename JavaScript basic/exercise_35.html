@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 35 - JavaScript Basics</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      35. Write a program to check whether a specified character exists between
+      the 2nd and 4th positions in a given string.
+    </h2>
+
+    <input id="inp_val1" type="text" placeholder="enter any text" />
+    <input id="inp_val2" type="text" placeholder="specified character" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elInput1 = document.getElementById("inp_val1");
+      var elInput2 = document.getElementById("inp_val2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      // my solution
+      //   elBtn.addEventListener("click", function () {
+      //     var str1 = elInput1.value;
+      //     var str2 = elInput2.value;
+
+      //     if (str1.substring(1, 4) === str2) {
+      //       elDisplay.innerHTML = `The <span class="${"green"}">${str1}</span> has the character of <span class="${"red"}">${str2}</span> between the 2nd and 4th postions of <span class="${"green"}">${str1}</span>`;
+      //     } else {
+      //       elDisplay.innerHTML = `Sorry <span class="${"red"}">${str2}</span> is not between the 2nd and 4th postion of the string <span class="${"green"}">${str1}</span> `;
+      //     }
+      //   });
+
+      // w3 solution
+      elBtn.addEventListener("click", function () {
+        var str1 = elInput1.value;
+        var str2 = elInput2.value;
+        var ctr = 0;
+        for (let i = 0; i < str1.length; i++) {
+          if (str1.charAt(i) == str2 && i >= 1 && i <= 3) {
+            ctr = 1;
+            break;
+          }
+        }
+        if (ctr == 1) {
+          elDisplay.innerHTML = `The <span class="${"green"}">${str1}</span> has the character of <span class="${"red"}">${str2}</span> between the 2nd and 4th postions of <span class="${"green"}">${str1}</span>`;
+        } else {
+          elDisplay.innerHTML = `Sorry <span class="${"red"}">${str2}</span> is not between the 2nd and 4th postion of the string <span class="${"green"}">${str1}</span> `;
+        }
+      });
+    </script>
+  </body>
+</html>

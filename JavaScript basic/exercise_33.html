@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 33 - JavaScript Basics</title>
+</head>
+<body>
+    <h2>33. Write a JavaScript program to check whether two numbers are in the range 40..60 or 70..100 inclusive.  </h2>
+
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <button>check</button>
+    <p></p>
+
+    <script>
+        var elInput1 = document.getElementById('num1')
+        var elInput2 = document.getElementById('num2')
+        var elBtn = document.querySelector('button')
+        var elDisplay = document.querySelector('p')
+
+        elBtn.addEventListener('click', function(){
+            var val1 = parseInt(elInput1.value)
+            var val2 = parseInt(elInput2.value)
+
+            var val1_range_40_60 = val1 >= 40 && val1 <= 60 
+            var val1_range_70_100 = val1 >= 70 && val1 <= 100 
+            var val2_range_40_60 = val2 >= 40 && val2 <= 60 
+            var val2_range_70_100 = val2 >= 70 && val2 <= 100
+            
+            if (val1_range_40_60 || val2_range_40_60){
+                elDisplay.innerHTML = `${val1} and ${val2} is in the range of 40 to 60`
+            } else if(val1_range_70_100 || val2_range_70_100){
+                elDisplay.innerHTML = `${val1} and ${val2} is in the range of 70 to 100`
+            } else{
+                elDisplay.innerHTML = `${val1} and ${val2} are not in the specified ranges`
+            } 
+        })
+    </script>
+</body>
+</html>
