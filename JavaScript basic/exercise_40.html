@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 40 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      40. Write a JavaScript program to check from two given integers whether
+      one of them is 8 or their sum or difference is 8.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button id="add">add</button>
+    <button id="minus">minus</button>
+    <p></p>
+
+    <script>
+      var elNum1 = document.getElementById("num1");
+      var elNum2 = document.getElementById("num2");
+      var elAdd = document.getElementById("add");
+      var elMinus = document.getElementById("minus");
+      var elDisplay = document.querySelector("p");
+
+      function calculate(operation) {
+        var num1Val = parseFloat(elNum1.value);
+        var num2Val = parseFloat(elNum2.value);
+        var sum_8 = num1Val + num2Val == 8;
+        var diff_8 = Math.abs(num1Val - num2Val) == 8;
+
+        if (num1Val === 8 || num2Val === 8) {
+          elDisplay.innerHTML = `Value is 8`;
+        }
+        if (operation === "add" || sum_8) {
+          elDisplay.innerHTML = `The sum is ${num1Val + num2Val} - ${sum_8}`;
+        } else if (operation === "minus" || diff_8) {
+          elDisplay.innerHTML = `The difference is ${Math.abs(
+            num1Val - num2Val
+          )} - ${diff_8}`;
+        } else {
+          elDisplay.innerHTML = `Oopps sorry the sum or different is not 8`;
+        }
+        elNum1.value = "";
+        elNum2.value = "";
+      }
+
+      elAdd.addEventListener("click", function () {
+        calculate("add");
+      });
+      elMinus.addEventListener("click", function () {
+        calculate("minus");
+      });
+    </script>
+  </body>
+</html>

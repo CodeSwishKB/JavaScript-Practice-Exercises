@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 39 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      39. Write a JavaScript program to compute the sum of the two given
+      integers. If the sum is in the range 50..80 return 65 otherwise return 80.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button>compute</button>
+    <p></p>
+    <script>
+      var elNum1 = document.getElementById("num1");
+      var elNum2 = document.getElementById("num2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elNum1.value);
+        var num2 = parseInt(elNum2.value);
+        var sum = num1 + num2;
+
+        var sum_range_50_80 = sum >= 50 && sum <= 80;
+
+        if (sum_range_50_80) {
+          elDisplay.innerHTML = `Sum is ${sum} and I will return 65`;
+          elNum1.value = "";
+          elNum2.value = "";
+        } else {
+          elDisplay.innerHTML = `sum is ${sum} and its not in the range of 50 to 80, so I will return 80`;
+          num1.value = "";
+          num2.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

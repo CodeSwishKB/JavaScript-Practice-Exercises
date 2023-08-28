@@ -17,11 +17,36 @@
     <input id="examType" type="text" placeholder="exam type" />
     <input id="grade" type="number" placeholder="Grade of student" />
     <button>find</button>
-
+    <p></p>
     <script>
       var elExamType = document.getElementById("examType");
       var elGrade = document.getElementById("grade");
-      var elDisplay = document.querySelector("button");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var strExam = elExamType.value;
+        var grade = parseFloat(elGrade.value);
+
+        var grade_range_89_100 = grade >= 89 && grade <= 100;
+        var grade_gtet_90 = grade >= 90;
+
+        if (grade_range_89_100 && strExam !== "Final-exam") {
+          elDisplay.innerHTML = `Student grade is ${grade}%  and receive A+. Your exam type is ${strExam} and it  is not "Final-Exam"`;
+        } else if (strExam === "Final-exam" && grade_gtet_90) {
+          elDisplay.innerHTML = `Student grade is ${grade}%  and receive A+ and Your exam type is ${strExam}`;
+        } else if (grade <= 88) {
+          elDisplay.innerHTML = `Sorry to know that, you are not qualified`;
+        } else {
+          elDisplay.innerHTML = `enter a grade and exam type!`;
+        }
+      });
+
+      // function aGreenGrade(isGreen){
+      //   if (isGreen === "A+"){
+
+      //   }
+      // }
     </script>
   </body>
 </html>

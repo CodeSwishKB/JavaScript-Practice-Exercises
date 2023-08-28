@@ -36,15 +36,15 @@
         } else {
           var result;
           if (unit === "celsius") {
-            result = (valEnter - 32) / 1.8;;
-            elResult.innerHTML = `${valEnter}°F is ${Math.round(
-              result
-            ).toFixed(1)}°C`;
+            result = (valEnter - 32) / 1.8;
+            elResult.innerHTML = `${valEnter}°F is ${Math.round(result).toFixed(
+              1
+            )}°C`;
           } else if (unit === "fahrenheit") {
-            result = (valEnter * 1.8) + 32;
-            elResult.innerHTML = `${valEnter}°C is ${Math.round(
-              result
-            ).toFixed(1)}°F`;
+            result = valEnter * 1.8 + 32;
+            elResult.innerHTML = `${valEnter}°C is ${Math.round(result).toFixed(
+              1
+            )}°F`;
           }
         }
         elInput.value = "";
