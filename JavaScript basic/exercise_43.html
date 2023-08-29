@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 43 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      43. Write a JavaScript program to check from three given numbers (non
+      negative integers) that two or all of them have the same rightmost digit.
+    </h2>
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <input id="num3" type="number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elNum1 = document.getElementById("num1");
+      var elNum2 = document.getElementById("num2");
+      var elNum3 = document.getElementById("num3");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elNum1.value);
+        var num2 = parseInt(elNum2.value);
+        var num3 = parseInt(elNum3.value);
+
+        if (num1 % 10 === num2 && num1 % 10 === num3) {
+          elDisplay.innerHTML = `The end digits of 3 numbers ${num1}, ${num2} and ${num3} are <span style='color: green'>THE SAME</span>`;
+        } else if (
+          num1 % 10 === num2 % 10 ||
+          num1 % 10 === num3 % 10 ||
+          num2 % 10 === num3 % 10
+        ) {
+          var eqLastDigit = [];
+
+          if (num1 % 10 === num2 % 10) {
+            eqLastDigit.push(num1, num2);
+          }
+          if (num1 % 10 === num3 % 10) {
+            eqLastDigit.push(num1, num3);
+          }
+          if (num2 % 10 === num3 % 10) {
+            eqLastDigit.push(num2, num3);
+          }
+          elDisplay.innerHTML = `The end digits of 2 numbers ${eqLastDigit.join(
+            ", "
+          )} but its <span style="color: red">FALSE</span>`;
+        } else {
+          elDisplay.innerHTML = `The end digits of 3 numbers ${num1},  ${num2} and ${num3} are <span style="color: red">THE NOT SAME</span>`;
+        }
+        elNum1.value = "";
+        elNum2.value = "";
+        elNum3.value = "";
+      });
+    </script>
+  </body>
+</html>
