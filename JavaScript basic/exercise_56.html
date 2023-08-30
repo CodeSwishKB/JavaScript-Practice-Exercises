@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 56 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      56. Write a JavaScript program to divide two positive numbers and return
+      the result as string with properly formatted commas.
+    </h2>
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button>divide</button>
+    <p></p>
+
+    <script>
+      var elInput1 = document.getElementById("num1");
+      var elInput2 = document.getElementById("num2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elInput1.value);
+        var num2 = parseInt(elInput2.value);
+        var divide = Math.round(num1 / num2).toString();
+        var result_arr = divide.split("");
+
+        if (divide >= 1000) {
+          for (var i = divide.length - 3; i > 0; i++) {
+            result_arr.splice(i, 0, ",");
+          }
+          result_arr;
+        }
+        elDisplay.innerHTML = result_arr;
+      });
+    </script>
+  </body>
+</html>

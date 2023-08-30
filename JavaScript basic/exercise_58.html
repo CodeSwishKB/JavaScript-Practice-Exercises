@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 58 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      58. Write a JavaScript program to create an updated string of 4 copies of
+      the last 3 characters of a given original string. The string length must
+      be 3 and above.
+    </h2>
+
+    <input type="text" />
+    <input type="number" placeholder="repeat" />
+    <button>update</button>
+    <p></p>
+
+    <script>
+      var elTxt = document.querySelector("input");
+      var elNum = document.querySelector("input[type=number]");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elTxt.value;
+        var num = parseInt(elNum.value);
+        var str_last_3 = str.substr(str.length - 3);
+
+        if (num <= 0 || isNaN(num)) {
+          elDisplay.innerHTML = `add how many times to repeat`;
+        } else {
+          elDisplay.innerHTML = str_last_3.repeat(num);
+        }
+      });
+    </script>
+  </body>
+</html>

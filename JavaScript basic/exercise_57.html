@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 57 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      57. Write a JavaScript program to create one string of specified copies
+      (positive numbers) of a given string.
+    </h2>
+
+    <input type="text" />
+    <input type="number" placeholder="repeat" />
+    <button>copy</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elNum = document.querySelector("input[type=number]");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        var num = parseInt(elNum.value);
+
+        if (num <= 0 || isNaN(num)) {
+          elDisplay.innerHTML = `add how many times to repeat`;
+        } else {
+          elDisplay.innerHTML = str.repeat(num);
+        }
+      });
+    </script>
+  </body>
+</html>
