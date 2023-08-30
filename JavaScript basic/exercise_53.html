@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 53 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      53. Write a JavaScript program to check whether the characters a and b are
+      separated by exactly 3 places anywhere (at least once) in a given string.
+    </h2>
+    <input type="text" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", ab_Checker);
+
+      function ab_Checker() {
+        var str = elInput.value;
+        var test = (/a...b/).test(str) || (/b...a/).test(str);
+        if (test){
+          elDisplay.innerHTML = `${str} has a "a" and "b" character seperated by exactly 3 places anywhere in the given string`;
+        } else{
+          elDisplay.innerHTML = `Nah`
+        }
+        elInput.value = ""
+      }
+    </script>
+  </body>
+</html>

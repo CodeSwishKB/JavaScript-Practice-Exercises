@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 49 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      49. Write a JavaScript program to replace every character in a given
+      string with the character following it in the alphabet.
+    </h2>
+
+    <input type="text" />
+    <button>replace</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        elDisplay.innerHTML = transform(str);
+      });
+
+      function transform(text) {
+        var s = text.split("");
+        for (var i = 0; i < s.length; i++) {
+          switch (s[i]) {
+            case "":
+              break;
+            case "z":
+              s[i] = "a";
+              break;
+            case "Z":
+              s[i] = "A";
+              break;
+            default:
+              s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+          }
+
+          switch (s[i]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+              s[i] = s[i].toUpperCase();
+          }
+        }
+        return s.join("");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 48 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>48. Write a JavaScript program to reverse a given string.</h2>
+    <input type="text" />
+    <button>reverse</button>
+    <p></p>
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", reverseStr);
+
+      function reverseStr() {
+        var str = elInput.value;
+        var reversed = str.split("").reverse().join("");
+        console.log(reversed);
+        elDisplay.innerHTML = reversed;
+      }
+    </script>
+  </body>
+</html>

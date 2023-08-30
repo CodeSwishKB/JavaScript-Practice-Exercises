@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 46 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      46. Write a JavaScript program to check two given non-negative integers if
+      one (not both) is a multiple of 7 or 11.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elNum1 = document.getElementById("num1");
+      var elNum2 = document.getElementById("num2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elNum1.value);
+        var num2 = parseInt(elNum2.value);
+
+        // Display the result in the paragraph.
+        elDisplay.innerHTML = valCheck(num1, num2);
+      });
+
+      function valCheck(num1, num2) {
+        if (
+          !(
+            (num1 % 7 == 0 || num1 % 11 == 0) &&
+            (num2 % 7 == 0 || num2 % 11 == 0)
+          )
+        ) {
+          return (
+            num1 % 7 == 0 || num1 % 11 == 0 || num2 % 7 == 0 || num2 % 11 == 0
+          );
+        } else return false;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 51 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      51. Write a JavaScript program to convert a given number into hours and
+      minutes.
+    </h2>
+
+    <input type="number" />
+    <button>convert</button>
+    <p></p>
+
+    <script>
+      var elNum = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num = parseInt(elNum.value);
+        var hours = Math.floor(num / 60);
+        var mins = num % 60;
+        if (mins < 10) {
+          mins = `0${mins}`;
+        }
+        if (hours < 10) {
+          hours = `0${hours}`;
+        }
+        elDisplay.innerHTML = `The time convertion is: ${hours}:${mins}`;
+        elNum.value = "";
+      });
+    </script>
+  </body>
+</html>

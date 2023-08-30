@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 44 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      44. Write a JavaScript program to check from three given integers whether
+      a number is greater than or equal to 20. It is less than the others.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <input id="num3" type="number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      var elNum1 = document.getElementById("num1");
+      var elNum2 = document.getElementById("num2");
+      var elNum3 = document.getElementById("num3");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elNum1.value);
+        var num2 = parseInt(elNum2.value);
+        var num3 = parseInt(elNum3.value);
+
+        if (
+          (num1 >= 20 && (num1 < num2 || num1 < num3)) ||
+          (num2 >= 20 && (num2 < num1 || num2 < num3)) ||
+          (num3 >= 20 && (num3 < num1 || num3 < num2))
+        ) {
+          if (num1 >= 20 && (num1 < num2 || num1 < num3)) {
+            display(num1);
+          }
+          if (num2 >= 20 && (num2 < num1 || num2 < num3)) {
+            display(num2);
+          }
+          if (num3 >= 20 && (num3 < num1 || num3 < num2)) {
+            display(num3);
+          }
+        } else {
+          elDisplay.innerHTML = "No number is greater than or equal to 20.";
+        }
+        elNum1.value = "";
+        elNum2.value = "";
+        elNum3.value = "";
+      });
+
+      function display(num) {
+        elDisplay.innerHTML = `the number ${num} greater than 20`;
+      }
+    </script>
+  </body>
+</html>

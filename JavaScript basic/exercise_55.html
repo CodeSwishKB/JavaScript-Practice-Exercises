@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 55 - JavaScript Basics</title>
+</head>
+<body>
+    <h2>55. Write a JavaScript program to check whether a given string contains an equal number of p's and t's.  </h2>
+
+    <input type="text">
+    <button>check</button>
+    <p></p>
+
+    <script>
+        var elInput = document.querySelector('input')
+        var elBtn = document.querySelector('button')
+        var elDisplay = document.querySelector('p')
+
+        elBtn.addEventListener('click', function(){
+            var str = elInput.value
+            eq_pt(str)
+        })
+
+        // my solution
+        // function pt_count(str){
+        //     var p_matches = str.match(/[p]/gi)
+        //     var t_matches = str.match(/[t]/gi)
+            
+        //     var p_count = p_matches ? p_matches.length : 0
+        //     var t_count = t_matches ? t_matches.length : 0
+
+        //     if (p_count > 0){
+        //         elDisplay.innerHTML = `there are ${p_count} p's in the ${str}`
+        //     } else if (t_count > 0){
+        //         elDisplay.innerHTML = `there are ${t_count} t's in the ${str}` 
+        //     }else {
+        //         elDisplay.innerHTML = `p's: ${p_count}<br> t's: ${t_count}`
+        //     }
+        // }
+
+        // w3 solution
+        function eq_pt(str){
+            var str_p = str.replace(/[^p]/g, "")
+            var str_t = str.replace(/[^t]/g, "")
+
+            var p_num = str_p.length
+            var t_num = str_t.length
+        
+
+            elDisplay.innerHTML = `${p_num === t_num ? 'yeah' : 'puta'}`
+        }
+    </script>
+</body>
+</html>
