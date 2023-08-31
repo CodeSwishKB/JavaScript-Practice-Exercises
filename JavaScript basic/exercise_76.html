@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 76 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      76. Write a JavaScript program to create an array by taking the first and
+      last elements from a given array of integers. The length must be larger
+      than or equal to 1.
+    </h2>
+
+    <script>
+      function first_last(nums) {
+        var first = nums[0];
+        var last = nums[nums.length - 1];
+        var combine = [first, last];
+        return combine;
+      }
+      console.log(first_last([1, 2, 3]));
+
+      // w3 solution
+      function started(nums) {
+        var array1 = [];
+        array1.push(nums[0], nums[nums.length - 1]);
+
+        return array1;
+      }
+      console.log(started([4, 5, 6]));
+    </script>
+  </body>
+</html>

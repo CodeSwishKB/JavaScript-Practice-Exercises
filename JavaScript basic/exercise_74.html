@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 74 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      74. Write a JavaScript program to find the largest value between the first
+      and last elements and set all the other elements to that value. Display
+      the updated array.
+    </h2>
+
+    <script>
+      function largestVal(nums) {
+        var max_val = nums[0] > nums[2] ? num[0] : nums[2];
+
+        nums[0] = max_val;
+        nums[1] = max_val;
+        nums[2] = max_val;
+
+        return nums;
+      }
+
+      console.log(largestVal([1, 2, 69]));
+    </script>
+  </body>
+</html>

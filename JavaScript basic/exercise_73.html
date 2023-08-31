@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 73 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      73. Write a JavaScript program to reverse the elements of a given array of
+      integers of length 3.
+    </h2>
+
+    <script>
+      // w3 solution
+      function reverse3(array) {
+       return array.map((el, idx, arr) =>  arr[(arr.length - 1) - idx]);
+      }
+      console.log(reverse3([2, 4, 6]));
+      
+      // my solution
+      function reverseEl(nums) {
+        var arrReverse = nums.reverse();
+        return arrReverse
+      }
+      console.log(reverseEl([1, 2, 3]));
+    </script>
+  </body>
+</html>

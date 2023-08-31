@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 77 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      77. Write a JavaScript program to test whether an array of integers of
+      length 2 contains 1 or 3.
+    </h2>
+
+    <script>
+      function test(nums) {
+        if (nums.indexOf(1) != -1 || nums.indexOf(3) != -1) {
+          // kapag wala
+          return true;
+        } else {
+          return false;
+        }
+      }
+      console.log(test([1, 2]));
+    </script>
+  </body>
+</html>

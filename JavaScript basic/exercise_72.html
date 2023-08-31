@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 72 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      72. Write a JavaScript program to check whether the first and last
+      elements are the same in a given array of integers of length 3.
+    </h2>
+
+    <script>
+      function first_last(nums) {
+        var end = nums.length - 1;
+
+        if (nums.length >= 1) return nums[0] == nums[end];
+        else {
+          return false;
+        }
+      }
+
+      console.log(first_last([1, 2, 3]));
+      console.log(first_last([69, 2, 8, 9, 69]));
+    </script>
+  </body>
+</html>

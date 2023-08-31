@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 71 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      71. Write a JavaScript program to check whether 1 appears in the first or
+      last position of a given array of integers. The array length must be
+      larger than or equal to 1.
+    </h2>
+
+    <input type="number" />
+    <button>check</button>
+    <p></p>
+
+    <script>
+      //w3 solution
+      //   function first_last_1(nums) {
+      //     var end_pos = nums.length - 1;
+      //     return nums[0] == 1 || nums[end_pos] == 1;
+      //   }
+      //   console.log(first_last_1([1, 3, 5]));
+      //   console.log(first_last_1([1, 3, 5, 1]));
+      //   console.log(first_last_1([2, 4, 6]));
+
+      // my solution
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var arr = [];
+        var num = parseInt(elInput.value);
+        var addNumArr = arr.push(num);
+
+        var end_pos = addNumArr.length - 1;
+        var result = addNumArr[0] == 1 || addNumArr[end_pos] == 1;
+
+        elDisplay.innerHTML = result;
+      });
+    </script>
+  </body>
+</html>

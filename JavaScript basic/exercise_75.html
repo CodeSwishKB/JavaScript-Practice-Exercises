@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 75 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      75. Write a JavaScript program to create an array taking the middle
+      elements of the two arrays of integer and each length 3.
+    </h2>
+
+    <script>
+      function mid(nums1, nums2) {
+        var new_arr = [];
+
+        new_arr.push(nums1[1], nums2[1]);
+
+        return new_arr;
+      }
+
+      console.log(mid([1, 2, 4], [4, 69, 45]));
+    </script>
+  </body>
+</html>
