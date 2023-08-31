@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 59 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      59. Write a JavaScript program to extract the first half of a even string.
+    </h2>
+
+    <input type="text" />
+    <button>extract</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        let x;
+
+        if (str.length % 2 == 0) {
+          x = str.length / 2;
+        } else {
+          x = str.length / 2 - 1;
+        }
+        const str2 = str.substring(0, x);
+        elDisplay.innerHTML = str2;
+      });
+
+      // w3 solution
+      //   function first_half(str){
+      //     if (str.length % 2 == 0){
+      //         return str.slice(0, str.length / 2)
+      //     }
+      //     return str
+      //   }
+    </script>
+  </body>
+</html>

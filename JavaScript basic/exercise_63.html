@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 63 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      63. Write a JavaScript program to create a string using the middle three
+      characters of a given string of odd length. The string length must be
+      greater than or equal to three.
+    </h2>
+
+    <input type="text" />
+    <button>create</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        var mid;
+
+        if (str.length % 2 != 0) {
+          // odd string
+          mid = (str.length + 1) / 2;
+          elDisplay.innerHTML = str.slice(mid - 2, mid + 1);
+        } else {
+          elDisplay.innerHTML = str;
+        }
+      });
+    </script>
+  </body>
+</html>

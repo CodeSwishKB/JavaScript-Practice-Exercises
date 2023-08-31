@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 68 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      68. Write a JavaScript program to create a new string using the first and
+      last n characters from a given string. The string length must be larger
+      than or equal to n.
+    </h2>
+
+    <input type="text" />
+    <input type="number" />
+    <button>create</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elNum = document.querySelector("input[type=number]");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        var num = parseInt(elNum.value);
+
+        var first_part = str.substring(0, num);
+        var last_part = str.substring(str.length - num);
+        elDisplay.innerHTML = first_part + last_part;
+      });
+    </script>
+  </body>
+</html>

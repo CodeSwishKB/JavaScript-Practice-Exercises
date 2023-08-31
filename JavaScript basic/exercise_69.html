@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 69 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      69. Write a JavaScript program to compute the sum of three elements of a
+      given array of integers of length 3.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <input id="num3" type="number" />
+    <button>compute</button>
+    <p></p>
+
+    <script>
+      var elNum1 = document.querySelector("#num1");
+      var elNum2 = document.querySelector("#num2");
+      var elNum3 = document.querySelector("#num3");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elNum1.value);
+        var num2 = parseInt(elNum2.value);
+        var num3 = parseInt(elNum3.value);
+
+        var sum = sum_three(num1, num2, num3);
+        elDisplay.innerHTML = `Sum: ${sum}`;
+      });
+
+      function sum_three(num1, num2, num3) {
+        return num1 + num2 + num3;
+      }
+
+      // w3 solution
+      function sum_three(nums) {
+        return nums[0] + nums[1] + nums[2];
+      }
+    </script>
+  </body>
+</html>

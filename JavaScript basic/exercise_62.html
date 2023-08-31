@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 62 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      62. Write a JavaScript program to move the last three characters to the
+      start of a given string. The string length must be greater than or equal
+      to three.
+    </h2>
+
+    <input type="text" name="" id="" />
+    <button>move</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", move);
+
+      function move() {
+        var str = elInput.value;
+
+        if (str.length < 3) {
+          elDisplay.innerHTML = `Must 3 or more characters`;
+        } else {
+          elDisplay.innerHTML = str.slice(-3) + str.slice(0, -3);
+        }
+        elInput.value = "";
+      }
+    </script>
+  </body>
+</html>
