@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 89 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      89. Write a JavaScript program to check whether it is possible to replace
+      $ in a given expression x $ y = z with one of the four signs +, -, * or /
+      to obtain a correct expression. <br />
+      For example x = 10, y = 30 and z = 300, we can replace $ with a multiple
+      operator (*) to obtain x * y = z
+    </h2>
+
+    <form action="">
+      <input id="num1" type="number" />
+      <input id="num2" type="number" />
+      <input id="num3" type="number" />
+      <input type="submit" value="check" />
+      <p></p>
+    </form>
+
+    <script>
+      var elInput1 = document.querySelector("#num1");
+      var elInput2 = document.querySelector("#num2");
+      var elInput3 = document.querySelector("#num3");
+      var elBtn = document.querySelector("input[type=submit]");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var num1 = parseInt(elInput1.value);
+        var num2 = parseInt(elInput2.value);
+        var num3 = parseInt(elInput3.value);
+
+        var result =
+          num1 + num2 == num3 ||
+          num1 - num2 == num3 ||
+          num1 * num2 == num3 ||
+          num1 / num2 == num3;
+
+        elDisplay.innerHTML = result;
+      });
+    </script>
+  </body>
+</html>

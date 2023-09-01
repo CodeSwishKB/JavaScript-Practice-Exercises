@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 88 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      88. Write a JavaScript program that takes two integers and a divisor. If
+      the given divisor divides both integers and does not divide either, two
+      specified integers are similar. Check whether two integers are similar or
+      not.
+    </h2>
+    <form action="">
+      <input id="num1" type="number" placeholder="enter 1st number" />
+      <input id="num2" type="number" placeholder="enter 2nd number" />
+      <input id="divisor" type="number" placeholder="enter divisor" />
+      <input type="submit" value="divide" />
+      <p></p>
+    </form>
+
+    <script>
+      var elInput1 = document.querySelector("#num1");
+      var elInput2 = document.querySelector("#num2");
+      var elDivisor = document.querySelector("#divisor");
+      var elBtn = document.querySelector("input[type=submit]");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var num1 = parseInt(elInput1.value);
+        var num2 = parseInt(elInput2.value);
+        var divisor = parseInt(elDivisor.value);
+
+        if (
+          (num1 % divisor === 0 && num2 % divisor === 0) ||
+          (num1 % divisor === 0 && num2 % divisor === 0)
+        ) {
+          elDisplay.innerHTML = true;
+        } else {
+          elDisplay.innerHTML = false;
+        }
+      });
+    </script>
+  </body>
+</html>

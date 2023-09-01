@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 86 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>86. Write a JavaScript program to find the types of a given angle.</h2>
+    <form>
+      <input type="number" />
+      <input type="submit" value="find angle type" />
+    </form>
+    <p></p>
+
+    <script>
+      var elNum = document.querySelector("input");
+      var elBtn = document.querySelector("input[type=submit]");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", findAngle);
+
+      function findAngle(e) {
+        e.preventDefault();
+        var angle = parseInt(elNum.value);
+
+        if (angle < 90) {
+          elDisplay.innerHTML = `${angle} degrees is Acute Angle`;
+        } else if (angle === 90) {
+          elDisplay.innerHTML = `${angle} degrees is Right Angle`;
+        } else if (angle >= 90 && angle <= 180) {
+          elDisplay.innerHTML = `${angle} degrees is Obtuse Angle`;
+        } else if (angle === 180) {
+          elDisplay.innerHTML = `${angle} degrees is Straight Angle`;
+        } else {
+          elDisplay.innerHTML = `Unidentify angle`;
+        }
+        elNum.value = "";
+      }
+    </script>
+  </body>
+</html>

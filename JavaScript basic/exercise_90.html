@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 90 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      90. Write a JavaScript program to find the kth greatest element in a given
+      array of integers.
+    </h2>
+
+    <script>
+      function kth_greatest_in_array(arr, k) {
+        // loop for k
+        for (var i = 0; i < k; i++) {
+          var max_idx = i,
+            temp = arr[i];
+
+          // loop for other els in arr
+          for (var j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[max_idx]) {
+              max_idx = j;
+            }
+          }
+          //get the largest number in the array
+          arr[i] = arr[max_idx];
+          arr[max_idx] = temp;
+        }
+        return arr[k - 1];
+      }
+
+      console.log(kth_greatest_in_array([69, 42, -7, 88, 6, 9], 2));
+    </script>
+  </body>
+</html>
