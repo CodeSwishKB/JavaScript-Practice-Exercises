@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 84 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      84. Write a JavaScript program to replace each character in a given string
+      with the next in the English alphabet. <br />
+      Note: 'a' will be replace by 'b' or 'z' would be replaced by 'a'
+    </h2>
+
+    <input type="text" />
+    <button>shift alphabet</button>
+    <p></p>
+
+    <script>
+      var elInput = document.querySelector("input");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var str = elInput.value;
+        var all_chars = str.split("");
+
+        var modified = all_chars.map((char) => {
+          var n = char.charCodeAt() - "a".charCodeAt();
+          n = (n + 1) % 26;
+          return String.fromCharCode(n + "a".charCodeAt());
+        });
+        elDisplay.innerHTML = modified.join("");
+      });
+    </script>
+  </body>
+</html>

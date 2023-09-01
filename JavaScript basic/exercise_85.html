@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 85 - JavaScript basics</title>
+  </head>
+  <body>
+    <h2>
+      85. Write a JavaScript program to divide a given array of positive
+      integers into two parts. First element belongs to the first part, second
+      element belongs to the second part, and third element belongs to the first
+      part and so on. Now compute the sum of two parts and store it in an array
+      of size two.
+    </h2>
+
+    <script>
+      function alternate_sums(arr) {
+        const results = [0, 0];
+        for (var i = 0; i < arr.length; i++) {
+          if (i % 2) {
+            results[1] += arr[i];
+          } else {
+            results[0] += arr[i];
+          }
+        }
+        return results;
+      }
+
+      console.log(alternate_sums([2, 3, 4, 5, 6, 7, 45]));
+    </script>
+  </body>
+</html>

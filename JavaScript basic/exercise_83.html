@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 83 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      83. Write a JavaScript program to find the longest string from a given
+      array of strings.
+    </h2>
+
+    <script>
+      // my solution
+      function longestStr(arr) {
+        return arr.sort((a, b) => b.length - a.length)[0];
+      }
+
+      // w3 solution
+      function longest_string(str_arr) {
+        var max = str_arr[0].length;
+        str_arr.map((v) => (max = Math.max(max, v.length)));
+        result = str_arr.filter((v) => v.length == max);
+        return result;
+      }
+
+      console.log(longestStr(["kyle", "uyang", "barco"]));
+      console.log(longest_string(["kyle", "uyang", "jazther"]));
+    </script>
+  </body>
+</html>

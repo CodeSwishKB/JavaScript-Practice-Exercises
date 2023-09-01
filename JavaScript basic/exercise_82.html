@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 82 - JavaScript Basics</title>
+  </head>
+  <body>
+    <h2>
+      82. Write a JavaScript program to add two positive integers without
+      carrying.
+    </h2>
+
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button>add w/o carry</button>
+    <p></p>
+
+    <script>
+      var elInput1 = document.querySelector("#num1");
+      var elInput2 = document.querySelector("#num2");
+      var elBtn = document.querySelector("button");
+      var elDisplay = document.querySelector("p");
+
+      elBtn.addEventListener("click", function () {
+        var num1 = parseInt(elInput1.value);
+        var num2 = parseInt(elInput2.value);
+
+        var result = 0,
+          x = 1;
+
+        while (num1 > 0 && num2 > 0) {
+          result += x * ((num1 + num2) % 10);
+          num1 = Math.floor(num1 / 10);
+          num2 = Math.floor(num2 / 10);
+          x *= 10;
+        }
+
+        elDisplay.innerHTML = result;
+
+        elInput1.value = "";
+        elInput2.value = "";
+      });
+    </script>
+  </body>
+</html>
