@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>exercise 91 - JavaScript Basics</title>
   </head>
   <body>
     <h2>
@@ -11,5 +11,27 @@
       its k consecutive numbers (numbers that follow each other in order) in a
       given array of positive integers.
     </h2>
+
+    <script>
+      function array_max_consecutive_sum(nums, k) {
+        let result = 0;
+        let temp_sum = 0;
+
+        for (var i = 0; i < k; i++) {
+          temp_sum += nums[i];
+        }
+
+        for (var i = k - 1; i < nums.length; i++) {
+          temp_sum += nums[i];
+          if (temp_sum > result) {
+            result = temp_sum;
+          }
+          temp_sum -= nums[i - k - i];
+        }
+        console.log;
+        return result;
+      }
+      console.log(array_max_consecutive_sum([45, 34, 2, 5, 11, 82], 2));
+    </script>
   </body>
 </html>
